@@ -42,4 +42,6 @@ Rails.application.configure do
   #Capybara Test config
   config.allow_concurrency = false
 
+  Capybara.javascript_driver = :selenium
+
 end

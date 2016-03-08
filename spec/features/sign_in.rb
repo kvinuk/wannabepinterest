@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "The Sign In process", :type => :feature do
+describe "The Sign In process", :type => :feature , :js => true do
 
   before do
     @user = FactoryGirl.create(:user)
