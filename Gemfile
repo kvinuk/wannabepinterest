@@ -26,6 +26,7 @@ group :development, :test do
   gem "rspec-rails", "~> 3.1.0"
   gem "ffaker"
   gem "capybara"
+  gem "selenium-webdriver"
 
 end
 
