@@ -1,0 +1,16 @@
+<h1>Lista de Boards</h1>
+<h2>Total boards <%= @boards.count %></h2>
+<table>
+		<thead>
+			<tr>
+				<th>Name: </th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @boards.each do |board|%>
+				<tr>
+					<td><%= board.name %></td>
+				</tr>
+			<% end %>
+		</tbody>
+</table>
