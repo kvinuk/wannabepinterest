@@ -7,10 +7,7 @@ describe "The Sign In process", :type => :feature , :js => true do
   end
 
   it "signs in the user" do
-    visit "users/sign_in"
-    fill_in "user[email]", with: @user.email
-    fill_in "user[password]", with: "su$eppm01"
-    click_on "Log in"
+    sign_in @user
 
     expect(page).to have_content 'Log out'
   end
