@@ -1,0 +1,17 @@
+<h1>List of boards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @boards.each do |board| %>
+      <tr>
+        <td><%= link_to board.name, "#" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

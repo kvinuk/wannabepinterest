@@ -10,6 +10,6 @@ describe "The board creation process", :type => :feature do
     visit "/boards/new"
     fill_in "board[name]", with: "My new board"
     click_button "Save"
-    expect(current_path).to eql "/"
+    expect(current_path).to eql "/boards"
   end
 end
