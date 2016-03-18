@@ -6,4 +6,6 @@ RSpec.describe Board, :type => :model do
 
   it { should validate_presence_of(:name) }
   it { should belong_to(:user) }
+  it { should have_many(:placements) }
+  it { should have_many(:pins).through(:placements) }
 end
