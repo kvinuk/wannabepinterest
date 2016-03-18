@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -11,6 +12,7 @@
     <% @boards.each do |board| %>
       <tr>
         <td><%= link_to board.name, "#" %></td>
+        <td><%= link_to "Destroy", board, method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
