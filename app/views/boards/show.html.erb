@@ -1,0 +1,7 @@
+<h1><%= @board.name %></h1>
+
+<div class="row">
+  <% @board.pins.each do |pin| %>
+    <%= image_tag pin.image_url %>
+  <% end %>
+</div>
