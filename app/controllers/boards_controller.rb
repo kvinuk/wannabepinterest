@@ -11,6 +11,7 @@ class BoardsController < ApplicationController
 
   def show
     @board = current_user.boards.find(params[:id])
+    @pin = @board.pins.build
   end
 
   def create
@@ -32,6 +33,6 @@ class BoardsController < ApplicationController
   private
 
     def board_params
-      params.require(:board).permit(:name)
+      params.require(:board).permit(:name, :tags_list)
     end
 end

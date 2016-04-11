@@ -10,10 +10,14 @@ class PinsController < ApplicationController
     @board = current_user.boards.find(params[:board_id])
     @pin = @board.pins.build(pin_params)
 
-    if @pin.save
-      redirect_to @board, notice: "Tu pin se ha creado"
+    respond_to do |format|
+      if @pin.save
+      format.html {redirect_to @board, notice: "Tu pin se ha creado"}
+      format.js
     else
-      redirect_to @board, notice: "Ocurrio un error"
+      format.html {redirect_to @board, notice: "Ocurrio un error"}
+      format.js
+    end 
     end
   end
 

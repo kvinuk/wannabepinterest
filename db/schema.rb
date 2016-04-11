@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318002631) do
+ActiveRecord::Schema.define(version: 20160404233808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,16 @@ ActiveRecord::Schema.define(version: 20160318002631) do
   add_index "placements", ["board_id"], name: "index_placements_on_board_id", using: :btree
   add_index "placements", ["pin_id"], name: "index_placements_on_pin_id", using: :btree
 
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.string   "color"
+    t.integer  "board_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tags", ["board_id"], name: "index_tags_on_board_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -81,4 +91,5 @@ ActiveRecord::Schema.define(version: 20160318002631) do
   add_foreign_key "boards", "users"
   add_foreign_key "placements", "boards"
   add_foreign_key "placements", "pins"
+  add_foreign_key "tags", "boards"
 end

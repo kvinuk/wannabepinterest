@@ -1,6 +1,16 @@
 <h1><%= @board.name %></h1>
 
-<div class="row">
+<h1>New pin</h1>
+
+<%= form_for [@board, @pin], remote: true do |f| %>
+  <%= f.label :image, "Imagen" %><br />
+  <%= f.file_field :image %>
+
+  <br />
+  <%= f.submit "Save" %>
+<% end %>
+
+<div class="row" id="boards-container">
   <% @board.pins.each do |pin| %>
     <%= image_tag pin.image_url %>
   <% end %>

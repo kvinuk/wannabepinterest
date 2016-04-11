@@ -8,4 +8,5 @@ RSpec.describe Board, :type => :model do
   it { should belong_to(:user) }
   it { should have_many(:placements) }
   it { should have_many(:pins).through(:placements) }
+  it { should have_many(:tags) } 
 end
