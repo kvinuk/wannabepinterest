@@ -12,6 +12,7 @@
     <% @boards.each do |board| %>
       <tr>
         <td><%= link_to board.name, new_board_pin_path(board) %></td>
+        <td><%= link_to "Edit", edit_board_path(board) %></td>
         <td><%= link_to "Destroy", board, method: :delete %></td>
       </tr>
     <% end %>

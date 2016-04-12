@@ -14,6 +14,20 @@ class BoardsController < ApplicationController
     @pin = @board.pins.build
   end
 
+  def edit 
+    @board = current_user.boards.find(params[:id])
+  end
+
+  def update
+    @board = current_user.boards.find(params[:id])
+
+    if @board.update(board_params)
+      redirect_to boards_path
+    else
+      render :edit
+    end
+  end
+
   def create
     @board = current_user.boards.build(board_params)
 

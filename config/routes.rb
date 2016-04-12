@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :boards, only: [:new, :create, :index, :destroy, :show] do
+  resources :boards do
     resources :pins, only: [:create, :new]
   end
   # The priority is based upon order of creation: first created -> highest priority.
